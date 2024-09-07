@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #d1 {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        padding-top: 20%;
+      }
+       #d2 {
+        border: 2px solid black;
+        height: 250px;
+        width: 25%;
+        padding-left: 10%;
+        padding-top: 3%;
+        border-radius: 10%;
+        box-shadow: 5px 5px 2px 2px rgb(43, 29, 29);
+      }
+
+      .txt {
+        height: 10%;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="f1" onsubmit="return login()" action="Success.html">
+      <div id="d1">
+        <div id="d2">
+          <h2 style="color: blue;"><b>Login</b></h2>
+          <input class="txt" type="text" placeholder="UserName" id="username" />
+          <br /><br />
+          <input
+            class="txt"
+            type="password"
+            placeholder="Password"
+            id="passwd"
+          />
+          <br />
+          <br />
+          <input type="button" value="Login" onclick="login()" />
+          <a style="padding-left: 20px" href="Register.html">Go to Register</a>
+        </div>
+      </div>
+    </form>
+    <script>
+      var username = document.getElementById("username");
+      var userPw = document.getElementById("passwd");
+
+      // stored data from the register-form
+      var storedUName = localStorage.getItem("uname");
+      var storedPw = localStorage.getItem("pw");
+
+      function login() {
+        // check if stored data from register-form is equal to data from login form
+        if (username.value != storedUName) {
+          alert("Incorrect Username..!!!");
+        } else if (userPw.value != storedPw) {
+          alert("incorrect Password..!!!");
+        } else {
+          alert("Login Successful..!!!");
+        }
+      }
+    </script>
+  </body>
+</html>

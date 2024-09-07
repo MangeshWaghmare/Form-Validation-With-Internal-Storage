@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #d1 {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        padding-top: 15%;
+      }
+      #d2 {
+        border: 2px solid black;
+        height: 400px;
+        width: 30%;
+        padding-left: 10%;
+        border-radius: 10%;
+        box-shadow: 5px 5px 2px 2px rgb(43, 29, 29);
+      }
+      .txt {
+        height: 10%;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">
+      <div id="d2">
+        <h2 style="color: blue;""><b>Register</b></h2>
+        <input class="txt" type="text" placeholder="Name" id="name" />
+        <br /><br />
+        <input class="txt" type="text" placeholder="User Name" id="uname" />
+        <br /><br />
+        <input class="txt" type="password" placeholder="Password" id="pass" />
+        <br />
+        <br />
+        <input
+          class="txt"
+          type="password"
+          placeholder="Confirm Password"
+          id="conpass"
+        />
+        <br />
+        <br />
+        <input type="button" value="Register" onclick="store()" style="margin-left: 20px;" />
+        <a style="padding-left: 80px" href="index.html"> Go to Login</a>
+      </div>
+    </div>
+
+    <script>
+
+      var pass =document.getElementById("pass");
+      var cpass=document.getElementById("conpass");
+
+
+      // storing input from register-form
+      function store() {
+
+
+        localStorage.setItem("uname", uname.value);
+        localStorage.setItem("pw", pw.value);
+        alert("Registration Successfully")
+        }
+    </script>
+  </body>
+</html>
